@@ -1,6 +1,7 @@
 package com.farhanmirza.currencyapp
 
 
+import android.util.Log
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.farhanmirza.currencyapp.api.RatesAPI
@@ -9,9 +10,9 @@ import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.*
 import kotlinx.coroutines.test.TestCoroutineDispatcher
+import kotlinx.coroutines.test.TestCoroutineScope
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
 import org.junit.*
@@ -38,7 +39,7 @@ open class RatesAppUnitTests {
     }
 }
 
-
+@ExperimentalCoroutinesApi
 class RatesViewModelUnitTests: RatesAppUnitTests() {
 
     @Test
@@ -54,6 +55,16 @@ class RatesViewModelUnitTests: RatesAppUnitTests() {
          testSubject.fetchRates()
          verify {observer.onChanged(expectedData) }
      }
+
+
+    @Test
+    fun `testing when we retrieve list of rates with retorfit`() {
+
+        TestCoroutineScope().launch {
+            val ratesInterface = RatesAPI.create().fetchRates()
+            print(ratesInterface.rates)
+        }
+    }
 
 }
 
