@@ -25,12 +25,12 @@ class ExampleInstrumentedTest {
     @get:Rule
     val activityTestRule = ActivityScenarioRule(MainActivity::class.java)
     private val mainActivityRobot = MainActivityRobot()
-//    @Test
-//    fun useAppContext() {
-//        // Context of the app under test.
-//        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-//        assertEquals("com.farhanmirza.currencyapp", appContext.packageName)
-//    }
+    @Test
+    fun useAppContext() {
+        // Context of the app under test.
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        assertEquals("com.farhanmirza.currencyapp", appContext.packageName)
+    }
 
     @Test
     fun whenAppIsLaunchedShowsTitleAndRatesList() {
