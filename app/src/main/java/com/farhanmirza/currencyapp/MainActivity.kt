@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         ratesRecyclerView = findViewById(R.id.rates_list)
         ratesRecyclerView.layoutManager = LinearLayoutManager(this)
         ratesRecyclerView.setHasFixedSize(true)
-        ratesRecyclerView.adapter = RateAdapter(ratesList)
+        ratesRecyclerView.adapter = RatesAdapter(ratesList)
 
     }
 }

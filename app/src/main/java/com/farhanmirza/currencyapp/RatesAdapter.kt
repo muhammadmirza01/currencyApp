@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RateAdapter(private val ratesList: ArrayList<String>) :
-    RecyclerView.Adapter<RateAdapter.RatesViewHolder>() {
+class RatesAdapter(private val ratesList: ArrayList<String>) :
+    RecyclerView.Adapter<RatesAdapter.RatesViewHolder>() {
 
     override fun onBindViewHolder(holder: RatesViewHolder, position: Int) {
         val currentItem = ratesList[position]
