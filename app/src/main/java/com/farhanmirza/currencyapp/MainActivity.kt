@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        ratesList = arrayListOf("Rate 1","Rate 2")
+        ratesList = arrayListOf("Rate 1","Rate 2","Rate 3")
 
         ratesRecyclerView = findViewById(R.id.rates_list)
         ratesRecyclerView.layoutManager = LinearLayoutManager(this)
